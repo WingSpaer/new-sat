@@ -26,6 +26,10 @@
             width: 100%;
             padding: 20px;
             text-align: center;
+            display: block; /* Изначально отображаем основную секцию */
+        }
+        #form {
+            display: none; /* Изначально скрываем форму */
         }
         h1 {
             margin-top: 50px;
@@ -119,14 +123,12 @@
                 document.getElementById("error").innerText = "ошибка в номере телефона";
                 return;
             }
-
             let data = {
                 name: name,
                 email: email,
                 phone: phone
             }
             tg.sendData(JSON.stringify(data));
-
             tg.close()
         })
     </script>
